@@ -14,7 +14,7 @@ class Dataset_Creation:
     	print('----------------------')
     	print('-- ',len(valid_emails),'Emails Found --')
     
-    	file = open('F:\WebMining\SimarjotKaur_WM\Code_WM\Datasets/final_dataset.csv','w')
+    	file = open('G:\github\Email-Classifier/final_dataset.csv','w')
     	file.write('Email,Label,Length\n')	# Header Line
     	for email in valid_emails:
     		file.write('"'+email[1]+'",'+email[0]+','+str(len(email[1]))+'\n') # Added double quotes for csv to read email as one column
@@ -103,7 +103,7 @@ print('----------------------')
 #create object of the class
 create_dataset= Dataset_Creation()
 
-emails_dataset = open('F:\WebMining\SimarjotKaur_WM\Code_WM\Datasets/fradulent_emails.txt','r').read() #Read complete dataset as string
+emails_dataset = open('G:\github\Email-Classifier/fradulent_emails.txt','r').read() #Read complete dataset as string
 email_list = emails_dataset.split('From r')
 
 for email in email_list:
@@ -123,7 +123,7 @@ print('\n')
 print('DATASET = SPAM AND NORMAL EMAILS')
 print('-------------------------')
 
-emails_dataset2 = open('F:\WebMining\SimarjotKaur_WM\Code_WM\Datasets/spam_normal_emails.csv','r').readlines() #Read complete dataset as string
+emails_dataset2 = open('G:\github\Email-Classifier/spam_normal_emails.csv','r').readlines() #Read complete dataset as string
 spam_emails,normal_emails= create_dataset.spam_normal_extraction(emails_dataset2)
 
 
